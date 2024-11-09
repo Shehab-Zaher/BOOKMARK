@@ -1,0 +1,152 @@
+:root {
+  --font-primary: "Pacifico", "cursive";
+  --font-secondary: "Righteous" "cursive";
+  --font-third: "PT Sans Caption", "sans-serif";
+  --color-primary: #f7ecde;
+  --color-secondary: hwb(37 38% 0%);
+  --color-third: rgb(60, 165, 92);
+  --color-forth: rgb(181, 172, 73);
+}
+
+body {
+  background-color: var(--color-primary);
+}
+
+::selection {
+  background: var(--color-secondary);
+}
+
+.head h1 {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.head h1::before {
+  content: "";
+  background-color: var(--color-secondary);
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.head h1:hover::before {
+  height: 65%;
+}
+
+.head,
+.body {
+  border-bottom-style: dotted;
+  border-bottom-width: 2px;
+}
+
+.body h3 {
+  /* not working with var  */
+  font-family: "Righteous", cursive;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background: linear-gradient(to right, var(--color-third), var(--color-forth));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body > main > div > div > h3 > svg:nth-child(1) > path {
+  color: var(--color-third);
+}
+
+body > main > div > div > h3 > svg:nth-child(2) > path {
+  color: var(--color-forth);
+}
+
+body > main > div > div > div > div > label {
+  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+}
+
+#inputName:focus,
+#inputURL:focus,
+#search:focus {
+  box-shadow: 0 0 0 0.25rem rgba(239, 197, 10, 0.25);
+}
+
+body > main > div > div > button {
+  background-color: #d1512d !important;
+}
+
+body > main > div > div > button:hover {
+  background-color: #bb4120 !important;
+}
+
+body > main > div > div > button:active {
+  background-color: var(--color-primary) !important;
+  color: black !important;
+}
+
+tbody tr th,
+tbody tr td {
+  padding: 10px 0 !important;
+  vertical-align: middle !important;
+}
+
+/* visit and delete btn */
+.btn {
+  background-color: var(--color-forth);
+  font-family: var(--font-third);
+  font-size: 1rem !important;
+  color: white !important;
+  -o-transition: 0.25s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  background-color: #8a9e23;
+}
+
+.d-btn:hover {
+  background-color: #9f371a !important;
+}
+
+.btn:active {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid black;
+}
+
+.btn:active svg {
+  color: black !important;
+}
+
+/* modal style  */
+.modal-title svg:nth-child(1) {
+  color: #f15f5d;
+}
+
+.modal-title svg:nth-child(2) {
+  color: #febe2e;
+}
+
+.modal-title svg:nth-child(3) {
+  color: #4db748;
+}
+
+.modal-body h2 {
+  font-size: 1.313rem;
+}
+
+/* search  */
+body > main > div > div > div > div > #searchLabel {
+  position: absolute;
+  right: 15px;
+}

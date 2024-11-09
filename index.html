@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <!-- icon image  -->
+    <link rel="icon" href="./images/bookmark.png" />
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- custom style  -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body modal-opened="false">
+    <main>
+      <div class="container">
+        <div
+          class="head p-5 d-flex justify-content-center align-items-center border-bottom-1"
+        >
+          <h1 class="text-dark">Bookmarker</h1>
+        </div>
+        <div
+          class="body d-flex flex-column align-items-center gap-4 py-4 border-bottom-1 mb-4"
+        >
+          <h3>
+            <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h3>
+          <div class="inp w-100">
+            <div class="mb-3">
+              <label for="inputName" class="form-label fw-bold">
+                <i class="fa-solid fa-book-bookmark"></i> &nbsp;Site Name</label
+              >
+              <input
+                type="text"
+                id="inputName"
+                class="form-control"
+                aria-describedby="passwordHelpBlock"
+                placeholder="Bookmark Name"
+              />
+            </div>
+            <div class="mb-1">
+              <label for="inputURL" class="form-label fw-bold">
+                <i class="fa-solid fa-link"></i> &nbsp;Site URL</label
+              >
+              <input
+                type="text"
+                id="inputURL"
+                class="form-control"
+                aria-describedby="passwordHelpBlock"
+                placeholder="Bookmark Name"
+              />
+            </div>
+          </div>
+          <button
+            onclick="btn_function()"
+            id="button"
+            type="button"
+            class="btn px-5 py-1 text-light"
+          >
+            Submit
+          </button>
+        </div>
+        <div class="footer">
+          <div class="search mb-3 d-flex justify-content-center">
+            <div class="inner w-25 position-relative d-flex align-items-center">
+              <input
+                id="search"
+                class="form-control rounded-3"
+                type="text"
+                placeholder="Search..."
+                aria-label="default input example"
+                oninput="search(this.value)"
+              />
+              <label for="search" id="searchLabel">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </label>
+            </div>
+          </div>
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Website Name</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="warningModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 d-flex gap-2" id="exampleModalLabel">
+                <i class="fa-solid fa-bookmark"></i
+                ><i class="fa-solid fa-bookmark"></i
+                ><i class="fa-solid fa-bookmark"></i>
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <h2 class="d-flex gap-1 flex-column fw-bolder">
+                Site Name or Url is not valid
+                <span class="d-block fw-medium fs-5"
+                  >Please follow this rules 🙄
+                </span>
+              </h2>
+              <ul class="list-unstyled ps-3 pt-3 d-flex flex-column gap-2">
+                <li>
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                  Name should be at least 3 characters
+                </li>
+                <li>
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                  Website Name should have unique name
+                </li>
+                <li>
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                  Valid URLs begin with http/s and don't end with a slash.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+    </main>
+    <!-- bootstrap  -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- font awesome  -->
+    <script src="./js/all.min.js"></script>
+    <!-- custom js -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>
+
